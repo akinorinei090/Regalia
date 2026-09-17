@@ -1,136 +1,250 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Regalia — servidor Minecraft semi-anárquico com economia, PvP, exploração e liberdade.">
-  <title>Regalia — Minecraft</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090a10" />
+  <meta name="description" content="Regalia — servidor Minecraft semi-anárquico com economia, PvP, exploração e liberdade." />
+  <title>Regalia — Minecraft Semi-Anárquico</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="particles" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
 
-  <header class="navbar">
-    <a class="logo" href="#inicio">REGALIA</a>
-    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-    <nav class="nav-links">
-      <a href="#inicio">Início</a>
-      <a href="#servidor">Servidor</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#votacao">Votação</a>
-      <a href="#discord">Discord</a>
-    </nav>
+  <header class="topbar" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Regalia início">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>REGALIA</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="siteNav">
+        <a href="#inicio">Início</a>
+        <a href="#servidor">Servidor</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#loja">VIP</a>
+        <a href="#votacao">Votação</a>
+        <a href="#discord">Discord</a>
+      </nav>
+
+      <button class="nav-play" data-copy-ip>Jogar agora</button>
+    </div>
   </header>
 
   <main>
-    <section id="inicio" class="hero reveal">
-      <div class="hero-content">
-        <span class="eyebrow">MINECRAFT • 1.21.1</span>
+    <section class="hero section" id="inicio">
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container hero-content reveal">
+        <div class="eyebrow"><span class="status-dot"></span> SERVIDOR ONLINE · 1.21.1</div>
         <h1>REGALIA</h1>
-        <h2>Um novo mundo. Regras diferentes.</h2>
-        <p>Servidor Minecraft semi-anárquico com economia, PvP, exploração e liberdade.</p>
-        <div class="hero-buttons">
-          <button class="btn btn-primary copy-ip">JOGAR AGORA</button>
-          <a class="btn btn-secondary" href="https://discord.gg/CvcDBKXryt" target="_blank" rel="noopener">DISCORD</a>
+        <p class="hero-tagline">Um novo mundo. <span>Regras diferentes.</span></p>
+        <p class="hero-description">
+          Servidor Minecraft semi-anárquico com economia, PvP, exploração e liberdade.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-copy-ip>Jogar agora</button>
+          <a class="btn btn-secondary" href="https://discord.gg/CvcDBKXryt" target="_blank" rel="noopener">Discord</a>
         </div>
-        <div id="copy-message" class="copy-message" role="status">IP copiado!</div>
+
+        <div class="ip-chip">
+          <span>IP DO SERVIDOR</span>
+          <strong id="heroIp">br-eco-05.reis.host:25749</strong>
+          <button class="icon-copy" data-copy-ip aria-label="Copiar IP" title="Copiar IP">+</button>
+        </div>
       </div>
-      <div class="hero-glow"></div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="moon"></div>
+        <div class="mountain mountain-a"></div>
+        <div class="mountain mountain-b"></div>
+        <div class="cube cube-red"></div>
+        <div class="cube cube-purple"></div>
+        <div class="cube cube-blue"></div>
+        <div class="obelisk"><i></i><b></b></div>
+        <div class="ground"></div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Explorar</span><i></i>
+      </div>
     </section>
 
-    <section id="servidor" class="section reveal">
-      <div class="section-heading">
-        <span>REGALIA</span>
-        <h2>Informações do Servidor</h2>
-      </div>
+    <section class="section section-dark" id="servidor">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">01 · STATUS</span>
+          <h2>Informações do Servidor</h2>
+          <p>Tudo que você precisa para entrar no mundo de Regalia.</p>
+        </div>
 
-      <div class="info-grid">
-        <article class="info-card"><span>Status</span><strong><i class="status-dot"></i> Servidor Online</strong></article>
-        <article class="info-card"><span>Disponibilidade</span><strong>24 HORAS</strong></article>
-        <article class="info-card"><span>Versão</span><strong>1.21.1</strong></article>
-        <article class="info-card"><span>Tipo</span><strong>Semi-Anárquico</strong></article>
-        <article class="info-card ip-card">
-          <span>IP</span>
-          <strong id="server-ip">br-eco-05.reis.host:25749</strong>
-          <button class="mini-copy copy-ip">COPIAR IP</button>
-        </article>
-      </div>
+        <div class="server-layout">
+          <div class="info-panel reveal">
+            <div class="server-status-row">
+              <div>
+                <span class="mini-label">Status</span>
+                <h3><span class="live-pulse"></span>Servidor Online</h3>
+              </div>
+              <div class="status-badge">ATIVO</div>
+            </div>
 
-      <div class="capacity">
-        <div class="capacity-top">
-          <div>
-            <span>Capacidade do Servidor</span>
-            <h3><b id="players-online">0</b> / <b id="players-max">20</b></h3>
+            <div class="info-grid">
+              <div class="info-item"><span>Disponibilidade</span><strong>24 HORAS</strong></div>
+              <div class="info-item"><span>Versão</span><strong>Minecraft 1.21.1</strong></div>
+              <div class="info-item"><span>Tipo</span><strong>Semi-Anárquico</strong></div>
+              <div class="info-item info-ip">
+                <span>IP</span>
+                <strong id="serverIp">br-eco-05.reis.host:25749</strong>
+                <button class="small-copy" data-copy-ip>Copiar IP</button>
+              </div>
+            </div>
           </div>
-          <span id="capacity-percent">0%</span>
+
+          <div class="capacity-panel reveal">
+            <div class="capacity-head">
+              <div>
+                <span class="mini-label">Capacidade</span>
+                <h3>Jogadores Online</h3>
+              </div>
+              <div class="players-count"><span id="onlinePlayers">0</span><em>/ 20</em></div>
+            </div>
+            <div class="progress-track" aria-label="Ocupação do servidor">
+              <div class="progress-fill" id="playerProgress" style="width: 0%"></div>
+            </div>
+            <div class="capacity-foot">
+              <span>Capacidade máxima: 20 jogadores</span>
+              <span>24/7</span>
+            </div>
+            <p class="api-note">
+              Contador preparado para receber futuramente uma API ou sistema externo que atualize os jogadores online.
+            </p>
+          </div>
         </div>
-        <div class="progress-track">
-          <div id="progress-bar" class="progress-bar"></div>
-        </div>
-        <p>Jogadores Online</p>
-        <small>Servidor aberto 24 horas por dia, 7 dias por semana.</small>
       </div>
     </section>
 
-    <section class="section about reveal">
-      <div class="about-box">
-        <div class="section-heading">
-          <span>SOBRE</span>
-          <h2>O mundo é seu.</h2>
+    <section class="section about-section">
+      <div class="container about-layout">
+        <div class="section-heading reveal">
+          <span class="section-kicker">02 · O MUNDO</span>
+          <h2>Sobre o Regalia</h2>
         </div>
-        <p>O Regalia é um servidor semi-anárquico de Minecraft focado em liberdade, exploração, economia e PvP. Construa sua base, faça alianças, enfrente outros jogadores, negocie recursos e descubra tudo o que o mundo tem para oferecer.</p>
+        <div class="about-copy reveal">
+          <p class="lead">
+            O Regalia é um servidor semi-anárquico de Minecraft focado em liberdade, exploração, economia e PvP.
+          </p>
+          <p>
+            Construa sua base, faça alianças, enfrente outros jogadores, negocie recursos e descubra tudo o que o mundo tem para oferecer.
+          </p>
+          <div class="about-stats">
+            <div><strong>1.21.1</strong><span>Versão</span></div>
+            <div><strong>24/7</strong><span>Disponibilidade</span></div>
+            <div><strong>20</strong><span>Slots</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="recursos" class="section reveal">
-      <div class="section-heading">
-        <span>EXPERIÊNCIA</span>
-        <h2>Recursos</h2>
-      </div>
-      <div class="features-grid">
-        <article class="feature-card"><b>01</b><h3>PvP</h3><p>Confrontos e liberdade para jogar do seu jeito.</p></article>
-        <article class="feature-card"><b>02</b><h3>Economia</h3><p>Negocie recursos e construa sua própria riqueza.</p></article>
-        <article class="feature-card"><b>03</b><h3>Votação</h3><p>Ajude o servidor a crescer e receba recompensas.</p></article>
-        <article class="feature-card"><b>04</b><h3>Eventos</h3><p>Atividades especiais para movimentar o mundo.</p></article>
-        <article class="feature-card"><b>05</b><h3>Exploração</h3><p>Descubra estruturas, recursos e lugares raros.</p></article>
-        <article class="feature-card"><b>06</b><h3>TPA</h3><p>Encontre seus aliados de forma rápida.</p></article>
-        <article class="feature-card"><b>07</b><h3>Homes</h3><p>Salve locais importantes e volte quando quiser.</p></article>
-        <article class="feature-card"><b>08</b><h3>Auction House</h3><p>Compre e venda itens entre jogadores.</p></article>
-        <article class="feature-card"><b>09</b><h3>Cobblemon</h3><p>Explore o mundo com a experiência Cobblemon.</p></article>
-        <article class="feature-card"><b>10</b><h3>Voice Chat</h3><p>Converse por voz enquanto joga.</p></article>
+    <section class="section section-dark" id="recursos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">03 · EXPERIÊNCIA</span>
+          <h2>Recursos</h2>
+          <p>Um conjunto de sistemas para deixar cada sessão mais dinâmica.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal"><span class="feature-index">01</span><h3>PvP</h3><p>Combates entre jogadores e disputas por território e recursos.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">02</span><h3>Economia</h3><p>Negocie itens, recursos e transforme progresso em valor.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">03</span><h3>Sistema de votação</h3><p>Ajude a divulgar o servidor enquanto recebe recompensas.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">04</span><h3>Eventos</h3><p>Atividades especiais para movimentar o mundo.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">05</span><h3>Exploração</h3><p>Descubra lugares, recursos e oportunidades longe do spawn.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">06</span><h3>TPA</h3><p>Facilite a movimentação entre jogadores com comandos práticos.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">07</span><h3>Homes</h3><p>Salve pontos importantes para voltar ao seu mundo com facilidade.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">08</span><h3>Auction House</h3><p>Compre e venda itens com outros jogadores.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">09</span><h3>Cobblemon</h3><p>Uma camada extra de exploração e coleção dentro do servidor.</p></article>
+          <article class="feature-card reveal"><span class="feature-index">10</span><h3>Voice Chat</h3><p>Converse por voz e coordene suas aventuras em tempo real.</p></article>
+        </div>
       </div>
     </section>
 
-    <section id="votacao" class="section vote reveal">
-      <div class="vote-box">
-        <span class="eyebrow">AJUDE O REGALIA</span>
-        <h2>Vote no Regalia</h2>
-        <p>Vote no servidor para ajudar na divulgação e receber recompensas dentro do Regalia.</p>
-        <div class="vote-buttons">
-          <a class="btn btn-primary vote-link" href="#" target="_blank" rel="noopener">SITE DE VOTAÇÃO 1</a>
-          <a class="btn btn-secondary vote-link" href="#" target="_blank" rel="noopener">SITE DE VOTAÇÃO 2</a>
-          <a class="btn btn-secondary vote-link" href="#" target="_blank" rel="noopener">SITE DE VOTAÇÃO 3</a>
+    <section class="section store-section" id="loja">
+      <div class="container">
+        <div class="store-top reveal">
+          <div class="section-heading">
+            <span class="section-kicker">04 · LOJA</span>
+            <h2>VIP do Regalia</h2>
+            <p>Planos premium para personalizar sua experiência. Os links de compra ficam prontos para você configurar depois.</p>
+          </div>
+          <div class="store-badge">10 PLANOS</div>
         </div>
-        <small>Os links de votação podem ser configurados no código quando você definir os sites.</small>
+
+        <div class="shop-grid" id="shopGrid"></div>
       </div>
     </section>
 
-    <section id="discord" class="section discord reveal">
-      <div class="discord-box">
-        <div>
-          <span class="eyebrow">COMUNIDADE</span>
-          <h2>Entre para o Discord</h2>
-          <p>Converse com a comunidade, acompanhe novidades, eventos e atualizações do Regalia.</p>
+    <section class="section vote-section" id="votacao">
+      <div class="container vote-layout">
+        <div class="vote-card reveal">
+          <span class="section-kicker">05 · COMUNIDADE</span>
+          <h2>Vote no Regalia</h2>
+          <p>
+            Vote no servidor para ajudar na divulgação e receber recompensas dentro do Regalia.
+          </p>
+          <div class="vote-buttons">
+            <a class="btn btn-primary vote-link" href="#" data-vote-slot="1">Site de votação 01</a>
+            <a class="btn btn-ghost vote-link" href="#" data-vote-slot="2">Site de votação 02</a>
+            <a class="btn btn-ghost vote-link" href="#" data-vote-slot="3">Site de votação 03</a>
+          </div>
+          <small>Os links acima estão preparados para serem configurados no arquivo <code>script.js</code>.</small>
         </div>
-        <a class="btn btn-primary" href="https://discord.gg/CvcDBKXryt" target="_blank" rel="noopener">ENTRAR NO DISCORD</a>
+
+        <div class="vote-graphic reveal" aria-hidden="true">
+          <div class="trophy">
+            <div class="trophy-top"></div>
+            <div class="trophy-cup"></div>
+            <div class="trophy-base"></div>
+          </div>
+          <div class="vote-orbit orbit-one"></div>
+          <div class="vote-orbit orbit-two"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section discord-section" id="discord">
+      <div class="container">
+        <div class="discord-card reveal">
+          <div>
+            <span class="section-kicker">06 · CONEXÃO</span>
+            <h2>Entre para o Discord</h2>
+            <p>Receba novidades, converse com a comunidade e acompanhe os próximos eventos.</p>
+          </div>
+          <a class="btn btn-primary btn-large" href="https://discord.gg/CvcDBKXryt" target="_blank" rel="noopener">Entrar no Discord</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <strong>REGALIA © 2026</strong>
-    <p>Minecraft é uma marca da Mojang Studios. Este servidor não possui afiliação oficial com a Mojang.</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand brand-footer" href="#inicio"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>REGALIA</span></a>
+        <p>Regalia © 2026</p>
+      </div>
+      <p class="legal">Minecraft é uma marca da Mojang Studios. Este servidor não possui afiliação oficial com a Mojang.</p>
+    </div>
   </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-check">✓</span>
+    <span id="toastMessage">IP copiado!</span>
+  </div>
 
   <script src="script.js"></script>
 </body>
