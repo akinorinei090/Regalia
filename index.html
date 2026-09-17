@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Regalia — servidor Minecraft semi-anárquico com economia, PvP, exploração e liberdade.">
+  <title>Regalia — Minecraft</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="particles" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <a class="logo" href="#inicio">REGALIA</a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav-links">
+      <a href="#inicio">Início</a>
+      <a href="#servidor">Servidor</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#votacao">Votação</a>
+      <a href="#discord">Discord</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero reveal">
+      <div class="hero-content">
+        <span class="eyebrow">MINECRAFT • 1.21.1</span>
+        <h1>REGALIA</h1>
+        <h2>Um novo mundo. Regras diferentes.</h2>
+        <p>Servidor Minecraft semi-anárquico com economia, PvP, exploração e liberdade.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary copy-ip">JOGAR AGORA</button>
+          <a class="btn btn-secondary" href="https://discord.gg/CvcDBKXryt" target="_blank" rel="noopener">DISCORD</a>
+        </div>
+        <div id="copy-message" class="copy-message" role="status">IP copiado!</div>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section id="servidor" class="section reveal">
+      <div class="section-heading">
+        <span>REGALIA</span>
+        <h2>Informações do Servidor</h2>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card"><span>Status</span><strong><i class="status-dot"></i> Servidor Online</strong></article>
+        <article class="info-card"><span>Disponibilidade</span><strong>24 HORAS</strong></article>
+        <article class="info-card"><span>Versão</span><strong>1.21.1</strong></article>
+        <article class="info-card"><span>Tipo</span><strong>Semi-Anárquico</strong></article>
+        <article class="info-card ip-card">
+          <span>IP</span>
+          <strong id="server-ip">br-eco-05.reis.host:25749</strong>
+          <button class="mini-copy copy-ip">COPIAR IP</button>
+        </article>
+      </div>
+
+      <div class="capacity">
+        <div class="capacity-top">
+          <div>
+            <span>Capacidade do Servidor</span>
+            <h3><b id="players-online">0</b> / <b id="players-max">20</b></h3>
+          </div>
+          <span id="capacity-percent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <p>Jogadores Online</p>
+        <small>Servidor aberto 24 horas por dia, 7 dias por semana.</small>
+      </div>
+    </section>
+
+    <section class="section about reveal">
+      <div class="about-box">
+        <div class="section-heading">
+          <span>SOBRE</span>
+          <h2>O mundo é seu.</h2>
+        </div>
+        <p>O Regalia é um servidor semi-anárquico de Minecraft focado em liberdade, exploração, economia e PvP. Construa sua base, faça alianças, enfrente outros jogadores, negocie recursos e descubra tudo o que o mundo tem para oferecer.</p>
+      </div>
+    </section>
+
+    <section id="recursos" class="section reveal">
+      <div class="section-heading">
+        <span>EXPERIÊNCIA</span>
+        <h2>Recursos</h2>
+      </div>
+      <div class="features-grid">
+        <article class="feature-card"><b>01</b><h3>PvP</h3><p>Confrontos e liberdade para jogar do seu jeito.</p></article>
+        <article class="feature-card"><b>02</b><h3>Economia</h3><p>Negocie recursos e construa sua própria riqueza.</p></article>
+        <article class="feature-card"><b>03</b><h3>Votação</h3><p>Ajude o servidor a crescer e receba recompensas.</p></article>
+        <article class="feature-card"><b>04</b><h3>Eventos</h3><p>Atividades especiais para movimentar o mundo.</p></article>
+        <article class="feature-card"><b>05</b><h3>Exploração</h3><p>Descubra estruturas, recursos e lugares raros.</p></article>
+        <article class="feature-card"><b>06</b><h3>TPA</h3><p>Encontre seus aliados de forma rápida.</p></article>
+        <article class="feature-card"><b>07</b><h3>Homes</h3><p>Salve locais importantes e volte quando quiser.</p></article>
+        <article class="feature-card"><b>08</b><h3>Auction House</h3><p>Compre e venda itens entre jogadores.</p></article>
+        <article class="feature-card"><b>09</b><h3>Cobblemon</h3><p>Explore o mundo com a experiência Cobblemon.</p></article>
+        <article class="feature-card"><b>10</b><h3>Voice Chat</h3><p>Converse por voz enquanto joga.</p></article>
+      </div>
+    </section>
+
+    <section id="votacao" class="section vote reveal">
+      <div class="vote-box">
+        <span class="eyebrow">AJUDE O REGALIA</span>
+        <h2>Vote no Regalia</h2>
+        <p>Vote no servidor para ajudar na divulgação e receber recompensas dentro do Regalia.</p>
+        <div class="vote-buttons">
+          <a class="btn btn-primary vote-link" href="#" target="_blank" rel="noopener">SITE DE VOTAÇÃO 1</a>
+          <a class="btn btn-secondary vote-link" href="#" target="_blank" rel="noopener">SITE DE VOTAÇÃO 2</a>
+          <a class="btn btn-secondary vote-link" href="#" target="_blank" rel="noopener">SITE DE VOTAÇÃO 3</a>
+        </div>
+        <small>Os links de votação podem ser configurados no código quando você definir os sites.</small>
+      </div>
+    </section>
+
+    <section id="discord" class="section discord reveal">
+      <div class="discord-box">
+        <div>
+          <span class="eyebrow">COMUNIDADE</span>
+          <h2>Entre para o Discord</h2>
+          <p>Converse com a comunidade, acompanhe novidades, eventos e atualizações do Regalia.</p>
+        </div>
+        <a class="btn btn-primary" href="https://discord.gg/CvcDBKXryt" target="_blank" rel="noopener">ENTRAR NO DISCORD</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>REGALIA © 2026</strong>
+    <p>Minecraft é uma marca da Mojang Studios. Este servidor não possui afiliação oficial com a Mojang.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
