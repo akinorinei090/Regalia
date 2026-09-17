@@ -24,7 +24,7 @@ const VIP_PLANS = [
 
 // Coloque os links de votação reais aqui.
 const VOTE_LINKS = {
-  1: "",
+  1: "https://minecraftservers.org/vote/693330",
   2: "",
   3: ""
 };
